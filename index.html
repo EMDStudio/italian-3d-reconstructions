@@ -13,28 +13,28 @@
 		<!-- <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5 "rotation="0 15 0"></a-text> -->
 	  
 		<!-- Gallery -->
-			  <a-assets>
-			<audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+			<a-assets>
+				<audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
-			<!-- Images. -->
-			<img id="StartingBG" src="Images/StartingBG.jpg">
-			<img id="city-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-			<img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-			<img id="cubes-thumb" src="Images/StartingBG_tmb.jpg">
-			<img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-			<img id="sechelt-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-			
-        <!-- Image link template to be reused. -->
-			<a-entity class="link"
-			geometry="primitive: plane; height: 10; width: 10"
-			material="shader: flat; src: #cubes-thumb"></a-entity>
+				<!-- Images. -->
+				<img id="StartingBG" src="Images/StartingBG.jpg">
+				<img id="city-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+				<img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+				<img id="cubes-thumb" src="Images/StartingBG_tmb.jpg">
+				<img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+				<img id="sechelt-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+				
+			<!-- Image link template to be reused. -->
+
 		
 		  </a-assets>
 
 		  <!-- 360-degree image. -->
 		  <a-sky id="image-360" radius="10" src="#StartingBG"></a-sky>
 
-
+				<a-entity class="link"
+				geometry="primitive: plane; height: 10; width: 10"
+				material="shader: flat; src: #cubes-thumb"></a-entity>
 
 		  <!-- Camera + Cursor. -->
 		  <a-camera>
