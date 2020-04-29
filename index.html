@@ -18,8 +18,6 @@
 	  
 		<!-- Gallery -->
 			<a-assets>
-				<audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-
 				<!-- Images. -->
 				<img id="StartingBG" src="Images/StartingBG.jpg">
 				<img id="shaghouse-thumb" src="Images/Shaghouse_tmb.jpg">
@@ -51,13 +49,13 @@
 				<a-entity class="link"
 				  geometry="primitive: plane; height: 1; width: 1"
 				  material="shader: flat; src: ${thumb}"
-				  sound="on: click; src: #click-sound"></a-entity>
+				</a-entity>
 			  </script>
 			</a-assets>
 
 
 		  <!-- Image links. -->
-		  <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+		  <a-entity id="links" layout="type: line; margin: 1.5" position="0 1.5 -2">
 			<a-entity template="src: #link" data-src="#shaghouse-360" data-thumb="shaghouse-thumb"></a-entity>
 		  </a-entity>
 
