@@ -28,7 +28,7 @@
 				  <a-entity class="link"
 					geometry="primitive: plane; height: 1; width: 1"
 					material="shader: flat; src: ${thumb}"
-					event-set__mouseenter="scale: 1.2 1.2 1"
+					event-set__mouseenter="scale: 1.1 1.1 1"
 					event-set__mouseleave="scale: 1 1 1"
 					event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
 					proxy-event="event: click; to: #image-360; as: fade"
@@ -39,8 +39,8 @@
 
 		<!-- 360-degree image. -->
 			<a-sky id="image-360" radius="10" src="#StartingBG"></a-sky>
-				<!--animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"-->
-				<!--animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>-->
+				animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
 
 		  <!-- Image links. -->
