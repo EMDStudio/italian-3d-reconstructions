@@ -13,7 +13,6 @@
   </head>
   <body>
     <a-scene>
-		<!-- <a-sky src="Images/hdrmaps_com_free_056_half_tonemapped.jpg" rotation="0 -130 0"></a-sky> -->
 		<!-- <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5 "rotation="0 15 0"></a-text> -->
 	  
 		<!-- Gallery -->
@@ -21,7 +20,7 @@
 				<!-- Images. -->
 				<img id="StartingBG" src="Images/StartingBG.jpg">
 				<img id="shaghouse-thumb" src="Images/Shaghouse_tmb.jpg">
-				<img id="shaghouse-360" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+				<img id="shaghouse-360" src="Images/hdrmaps_com_free_062_Bg.jpg">
 
 			
 			    <!-- Image link template to be reused. -->
@@ -40,18 +39,8 @@
 
 		<!-- 360-degree image. -->
 			<a-sky id="image-360" radius="10" src="#StartingBG"></a-sky>
-				animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
-				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
-
-			<a-assets>
-			  <!-- ... -->
-			  <script id="plane" type="text/html">
-				<a-entity class="link"
-				  geometry="primitive: plane; height: 1; width: 1"
-				  material="shader: flat; src: ${thumb}"
-				</a-entity>
-			  </script>
-			</a-assets>
+				<!--animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"-->
+				<!--animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>-->
 
 
 		  <!-- Image links. -->
