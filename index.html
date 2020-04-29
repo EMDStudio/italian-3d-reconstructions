@@ -31,7 +31,7 @@
 			 <!-- ... -->
 			  <script id="plane" type="text/html">
 				<a-entity class="link"
-					position=${position}"
+					position="${position}"
 					geometry="primitive: plane; height: 1; width: 1"
 					material="shader: flat; src: ${thumb}"
 					sound="on: click; src: #click-sound"></a-entity>
@@ -43,7 +43,7 @@
 			<a-sky id="image-360" radius="10" src="#StartingBG"></a-sky>
 
 		<!-- buttons image. -->
-			<a-entity template="src: #plane" data-thumb="#shaghouse-thumb"></a-entity>
+			<a-entity template="src: #plane" data-thumb="#shaghouse-thumb" position="0, 1.5, -1.5"></a-entity>
 
 		  <!-- Camera + Cursor. -->
 		  <a-camera>
