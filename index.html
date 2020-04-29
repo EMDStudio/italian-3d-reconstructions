@@ -19,9 +19,12 @@
 			<a-assets>
 				<!-- Images. -->
 				<img id="StartingBG" crossorigin="anonymous" src="Images/StartingBG.jpg">
-				<img id="shaghousethumb" crossorigin="anonymous" src="Images/shaghouse_thumb.jpg">
-				<img id="shaghouse360" crossorigin="anonymous" src="Images/panoTest.jpg">
-
+				<img id="shaghousebasethumb" crossorigin="anonymous" src="Images/shaghouseBase_thumb.jpg">
+				<img id="shaghouseroomthumb" crossorigin="anonymous" src="Images/shaghouseRoom_thumb.jpg">
+				<img id="shaghouseroofthumb" crossorigin="anonymous" src="Images/shaghouseRoof_thumb.jpg">
+				<img id="shaghouseBase360" crossorigin="anonymous" src="Images/shaghouseBase_360.jpg">
+				<img id="shaghouseRoom360" crossorigin="anonymous" src="Images/shaghouseRoom_360.jpg">
+				<img id="shaghouseRoof360" crossorigin="anonymous" src="Images/shaghouseRoof_360.jpg">
 			
 			    <!-- Image link template to be reused. -->
 				<script id="link" type="text/html">
@@ -38,16 +41,16 @@
 		  </a-assets>
 
 		<!-- 360-degree image. -->
-			<a-sky id="image-360" radius="10" src="#StartingBG"
+			<a-sky id="image-360" radius="10" src="#shaghouseBase360"
 				animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
 				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
 
 		  <!-- Image links. -->
 		  <a-entity id="links" layout="type: line; margin: 1" position="-1 1.0 -2">
-			<a-entity template="src: #link" data-src="#shaghouse360" data-thumb="#shaghousethumb"></a-entity>
-			<a-entity template="src: #link" data-src="#StartingBG" data-thumb="#shaghousethumb"></a-entity>
-			<a-entity template="src: #link" data-src="#StartingBG" data-thumb="#shaghousethumb"></a-entity>
+			<a-entity template="src: #link" data-src="#shaghouseBase360" data-thumb="#shaghousebasethumb"></a-entity>
+			<a-entity template="src: #link" data-src="#shaghouseRoom360" data-thumb="#shaghouseroomthumb"></a-entity>
+			<a-entity template="src: #link" data-src="#shaghouseRoof360" data-thumb="#shaghouseroofthumb"></a-entity>
 		  </a-entity>
 
 
