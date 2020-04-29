@@ -26,20 +26,22 @@
 				<img id="cubes-thumb" src="Images/StartingBG_tmb.jpg">
 				<img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
 				<img id="sechelt-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-				
-			<!-- Image link template to be reused. -->
-			 <!-- ... -->
-				  <script id="plane" type="text/html">
-					<a-entity class="link"
-					  geometry="primitive: plane; height: 1; width: 1"
-					  material="shader: flat; src: ${thumb}"
-					  sound="on: click; src: #click-sound"></a-entity>
-				  </script>
-		
+			
 		  </a-assets>
 
 		<!-- 360-degree image. -->
 			<a-sky id="image-360" radius="10" src="#StartingBG"></a-sky>
+
+			<a-assets>
+			  <!-- ... -->
+			  <script id="plane" type="text/html">
+				<a-entity class="link"
+				  geometry="primitive: plane; height: 1; width: 1"
+				  material="shader: flat; src: ${thumb}"
+				  sound="on: click; src: #click-sound"></a-entity>
+			  </script>
+			</a-assets>
+
 
 		<!-- buttons image. -->
 			<a-entity id="links" layout="type: line; margin: 1.5" position="-3 -1 -4">
