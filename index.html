@@ -18,7 +18,7 @@
 
 			<!-- Images. -->
 			<img id="StartingBG" src="Images/StartingBG.jpg">
-			<img id="city-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+			<img id="city-thumb" src="Images/StartingBG_tmb.jpg">
 			<img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
 			<img id="cubes-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
 			<img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
@@ -29,10 +29,10 @@
 		  <a-sky id="image-360" radius="10" src="#StartingBG"></a-sky>
 
 		  <!-- Link template we will build. -->
-<a-entity class="link"
-  geometry="primitive: plane; height: 1; width: 1"
-  material="shader: flat; src: #cubes-thumb"
-  sound="on: click; src: #click-sound"></a-entity>
+			<a-entity class="link"
+			geometry="primitive: plane; height: 1; width: 1"
+			material="shader: flat; src: #cubes-thumb"</a-entity>
+
 
 		  <!-- Camera + Cursor. -->
 		  <a-camera>
