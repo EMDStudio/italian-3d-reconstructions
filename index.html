@@ -19,8 +19,8 @@
 			<a-assets>
 				<!-- Images. -->
 				<img id="StartingBG" src="Images/StartingBG.jpg">
-				<img id="shaghouse-thumb" src="Images/Shaghouse_tmb.jpg">
-				<img id="shaghouse-360" src="Images/hdrmaps_com_free_062_Bg.jpg">
+				<img id="shaghousethumb" src="Images/Shaghouse_tmb.jpg">
+				<img id="shaghouse360" src="Images/hdrmaps_com_free_062_Bg.jpg">
 
 			
 			    <!-- Image link template to be reused. -->
@@ -45,19 +45,21 @@
 
 		  <!-- Image links. -->
 		  <a-entity id="links" layout="type: line; margin: 1.5" position="0 1.5 -2">
-			<a-entity template="src: #link" data-src="#shaghouse-360" data-thumb="shaghouse-thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#shaghouse360" data-thumb="shaghousethumb"></a-entity>
 		  </a-entity>
 
 
 
 		  <!-- Camera + Cursor. -->
-		  <a-camera>
-			<a-cursor
-			  id="cursor"
-			  animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
-			  animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
-			  animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
-		  </a-camera>
+      <a-entity id="camera" camera look-controls>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: springgreen"
+          event-set__mouseleave="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
 			  
 	  
     </a-scene>
