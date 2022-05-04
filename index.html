@@ -32,10 +32,7 @@
 				<script id="link" type="text/html">
 				  <a-entity class="link"
 					geometry="primitive: plane; height: 0.8; width: 0.8"    
-					material="shader: flat; src: ${thumb}"
-					material= "color:blue; startEvents: click"
-				  animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: click"
-          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: fusing"
+					material="shader: flat; src: ${thumb}"\
 					event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
 					proxy-event="event: click; to: #image-360; as: fade"
 					</a-entity>
@@ -59,7 +56,19 @@
 
 
 		  <!-- Camera + Cursor. -->
-	
+		  <a-camera>
+			<a-cursor
+			  id="cursor"
+			  animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; 
+			  geometry=primitive: plane; height: 3; width: 3 
+			  material= color:blue;
+				animation__scale=property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: click
+        animation__scale_reverse=property: scale; to: 1 1 1; dur: 200; startEvents: fusing
+			  startEvents: click"
+			  animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+			  animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+		  </a-camera>
+			  
 	  
     </a-scene>
   </body>
