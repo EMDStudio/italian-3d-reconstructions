@@ -25,6 +25,27 @@
 				<img id="SHFNMain360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_360.jpg">
 				<img id="SNFNBedroom360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
 				<img id="SHFNRoof360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_360.jpg">
+
+				<a-mixin
+          id="frame"
+          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          material="color: white; shader: flat"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+       ></a-mixin>
+       <a-mixin
+          id="poster"
+          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          material="color: white; shader: flat"
+          material="shader: flat"
+          position="0 0 0.005"
+         ></a-mixin>
+         <a-mixin
+          id="movieImage"
+          geometry="primitive: plane; width: 1.5; height: 0.81"
+          material="src: #ponyo; shader: flat; transparent: true"
+          position="0 0.495 0.002"
+         ></a-mixin>
 			
 			    <!-- Image link template to be reused. -->
 				<script id="link" type="text/html">
@@ -47,16 +68,9 @@
 
 
 		  <!-- Image links. -->
-		  <a-entity id="links" layout="type: line; margin: 1" position="-1 1.0 -2">
+		  <a-entity id="links" layout="type: line; margin: 1" mixin="frame" position="-1 1.0 -2">
 			<a-entity template="src: #link" data-src="#SHFNMain360" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#SNFNBedroom360" data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb">
-				        <a-mixin
-          id="frame"
-          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
-          material="color: white; shader: flat"
-          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
-          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
-         ></a-mixin>
 			</a-entity>
 			<a-entity template="src: #link" data-src="#SHFNRoof360" data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
 		  </a-entity>
