@@ -13,7 +13,7 @@
   </head>
   <body>
     <a-scene>
-
+		<!-- <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5 "rotation="0 15 0"></a-text> -->
 	  
 		<!-- Gallery -->
 			<a-assets>
@@ -22,11 +22,12 @@
 				<img id="SaturdayHouseForNewlyweds_Main_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_thumb.jpg">
 				<img id="SaturdayHouseForNewlyweds_Bedroom_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_thumb.jpg">
 				<img id="SaturdayHouseForNewlyweds_Roof_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_thumb.jpg">
+				<img id="Pavillion_Main_thumb" crossorigin="anonymous" src="Images/Pavillion_Main_thumb.png">
 				<img id="SHFNMain360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_360.jpg">
-				<img id="SNFNBedroom360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
+				<img id="SHFNBedroom360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
 				<img id="SHFNRoof360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_360.jpg">
+				<img id="PavillionMain360" crossorigin="anonymous" src="Images/PavillionMain_360.png">
 
-				<a-framefriend id="framefriend" value="This is a frame" align="center" color="#FFF" visible="false" position="0 -0.55 0.55" geometry="primitive: plane; width: 1.75" material="color: #333" rotation="" scale="" text=""></a-framefriend>
 
 
 			
@@ -35,8 +36,8 @@
 				  <a-entity class="link"
 					geometry="primitive: plane; height: 0.8; width: 0.8"    
 					material="shader: flat; src: ${thumb}"
-					event-set__enter="_event: mouseenter; _target: #framefriend: true"
-          event-set__leave="_event: mouseleave; _target: #framefriend; visible: false"
+				  animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: click"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: fusing"
 					event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
 					proxy-event="event: click; to: #image-360; as: fade"
 					</a-entity>
@@ -53,8 +54,9 @@
 		  <!-- Image links. -->
 		  <a-entity id="links" layout="type: line; margin: 1" position="-1 1.0 -2">
 			<a-entity template="src: #link" data-src="#SHFNMain360" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"> </a-entity>
-			<a-entity template="src: #link" data-src="#SNFNBedroom360"  data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNBedroom360"  data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#SHFNRoof360"  data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#PavillionMain360" data-thumb="#Pavillion_Main_thumb"></a-entity>
 		  </a-entity>
 
 
@@ -63,9 +65,9 @@
 		  <a-camera>
 			<a-cursor
 			  id="cursor"
-			  animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents:event-set__click"
-			  animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: event-set__leave"
-			  animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: event-set__click"></a-cursor>
+			  animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+			  animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+			  animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
 		  </a-camera>
 			  
 	  
