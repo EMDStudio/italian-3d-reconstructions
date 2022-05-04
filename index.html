@@ -28,14 +28,14 @@
 
 				<a-mixin
           id="frame"
-          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          geometry="primitive: plane; width: 1; height: 1"
           material="color: white; shader: flat"
           animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
           animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
        ></a-mixin>
        <a-mixin
           id="poster"
-          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          geometry="primitive: plane; width: 1; height: 1"
           material="color: white; shader: flat"
           material="shader: flat"
           position="0 0 0.005"
@@ -69,7 +69,7 @@
 
 		  <!-- Image links. -->
 		  <a-entity id="links" layout="type: line; margin: 1" mixin="frame" position="-1 1.0 -2">
-			<a-entity template="src: #link" data-src="#SHFNMain360" mixin="frame" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNMain360" mixin="frame"  mixin="frame" class="raycastable menu-button" mixin="poster" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"> </a-entity>
 			<a-entity template="src: #link" data-src="#SNFNBedroom360" mixin="frame" data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb">
 			</a-entity>
 			<a-entity template="src: #link" data-src="#SHFNRoof360" mixin="frame" data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
