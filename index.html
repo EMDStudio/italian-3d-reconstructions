@@ -17,16 +17,33 @@
 	  
 		<!-- Gallery -->
 			<a-assets>
-				<!-- Images. -->
-				<img id="StartingBG" crossorigin="anonymous" src="Images/StartingBG.jpg">
+				<!-- thumbnail Images. -->
+
+				<img id="image-360" crossorigin="anonymous" src="Images/StartingBG.jpg">
 				<img id="SaturdayHouseForNewlyweds_Main_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_thumb.jpg">
 				<img id="SaturdayHouseForNewlyweds_Bedroom_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_thumb.jpg">
 				<img id="SaturdayHouseForNewlyweds_Roof_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_thumb.jpg">
 				<img id="Pavillion_Main_thumb" crossorigin="anonymous" src="Images/Pavillion_Main_thumb.png">
-				<img id="SHFNMain360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_360.jpg">
-				<img id="SHFNBedroom360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
-				<img id="SHFNRoof360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_360.jpg">
-				<img id="PavillionMain360" crossorigin="anonymous" src="Images/PavillionMain_360.png">
+				<img id="Pavillion_Main_thumb" crossorigin="anonymous" src="Images/Pavillion_Main_thumb.png">
+				<img id="Pavillion_Main_thumb" crossorigin="anonymous" src="Images/Pavillion_Main_thumb.png">
+				<!--<img id="EOMP_Main_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Main_thumb.jpg">-->
+				<!--<img id="EOMP_hall1_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall1_thumb.jpg">-->
+				<!--<img id="EOMP_hall2_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall2_thumb.jpg">-->
+				<!--<img id="EOMP_hall3_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall3_thumb.jpg">-->
+																			
+
+
+
+					<!-- 360 Images. -->
+				<img id="SHFNMain_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_360.jpg">
+				<img id="SHFNBedroom_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
+				<img id="SHFNRoof_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_360.jpg">
+				<img id="PavillionMain_360" crossorigin="anonymous" src="Images/PavillionMain_360.png">
+				<img id="EOMPMain_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Main_360.jpg">
+				<img id="EOMPHall1_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall1_360.jpg">
+				<img id="EOMPHall2_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall2_360.jpg">
+				<img id="EOMPHall3_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall3_360.jpg">
+
 
 
 
@@ -39,23 +56,28 @@
 				  animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: click"
           animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: fusing"
 					event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
-					proxy-event="event: click; to: #starter-image; as: fade"</a-entity>
+					proxy-event="event: click; to: #starter-image; as: fade"></a-entity>
 				</script>
 			
 		  </a-assets>
 
 		<!-- 360-degree image. -->
-			<a-sky id="starter-image" radius=10 src="#StartingBG"
+			<a-sky id="image-360" radius="10" src="#image-360"
 				animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
 				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
 
 		  <!-- Image links. -->
-		  <a-entity id="links" layout="type: line; margin: 1" position="-1 1.0 -2">
-			<a-entity template="src: #link" data-src="#SHFNMain360" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"> </a-entity>
-			<a-entity template="src: #link" data-src="#SHFNBedroom360"  data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb"></a-entity>
-			<a-entity template="src: #link" data-src="#SHFNRoof360"  data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
-			<a-entity template="src: #link" data-src="#PavillionMain360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+		  <a-entity id="links" layout="type: line; margin: 1.5" position="-1 1.0 -2">
+			<a-entity template="src: #link" data-src="#SHFNMain_360" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"> </a-entity>
+			<a-entity template="src: #link" data-src="#SHFNBedroom_360"  data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNRoof_360"  data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#PavillionMain_360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="EOMPMain_360" data-thumb="Images/ExhibitionOfMassProduction_Main_360.jpg"></a-entity>
+			<a-entity template="src: #link" data-src="EOMPHall1_360" data-thumb="Images/ExhibitionOfMassProduction_Hall1_360.jpg"></a-entity>
+			<a-entity template="src: #link" data-src="EOMPHall2_360" data-thumb="Images/ExhibitionOfMassProduction_Hall2_360.jpg"></a-entity>
+			<a-entity template="src: #link" data-src="EOMPHall3_360" data-thumb="Images/ExhibitionOfMassProduction_Hall3_360.jpg"></a-entity>
+
 	
 
 
