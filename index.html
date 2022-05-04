@@ -52,8 +52,9 @@
 				  <a-entity class="link"
 					geometry="primitive: plane; height: 0.8; width: 0.8"    
 					material="shader: flat; src: ${thumb}"
-					event-set__mouseenter="scale: 1.1 1.1 1"
-					event-set__mouseleave="scale: 1 1 1"
+					material= "color:blue; startEvents: click"
+				  animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: click"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: fusing"
 					event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
 					proxy-event="event: click; to: #image-360; as: fade"
 					</a-entity>
@@ -69,10 +70,9 @@
 
 		  <!-- Image links. -->
 		  <a-entity id="links" layout="type: line; margin: 1" position="-1 1.0 -2">
-			<a-entity template="src: #link" data-src="#SHFNMain360" mixin="frame" class="raycastable menu-button" mixin="poster" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"> </a-entity>
-			<a-entity template="src: #link" data-src="#SNFNBedroom360" mixin="frame" data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb">
-			</a-entity>
-			<a-entity template="src: #link" data-src="#SHFNRoof360" mixin="frame" data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNMain360" data-thumb="#SaturdayHouseForNewlyweds_Main_thumb"> </a-entity>
+			<a-entity template="src: #link" data-src="#SNFNBedroom360"  data-thumb="#SaturdayHouseForNewlyweds_Bedroom_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNRoof360"  data-thumb="#SaturdayHouseForNewlyweds_Roof_thumb"></a-entity>
 		  </a-entity>
 
 
