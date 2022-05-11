@@ -12,12 +12,13 @@
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
  
 
-	 <!-- SCENE TEMPLATE --> <!---
+	 <!-- SCENE TEMPLATE --> <!----
 	 <script id="scene" type="text/html">
 		 <a-entity class="scene"
 		     geometry="primitive:plane; height: 1.0; width: 1.0"
 			 position="0 -0 -0.1"
 			 material= "shader: flat; color: #adb8af"
+			text="value:Saturday House For Newlyweds;"
 			
 		  
 			  event-set__mouseenter="scale: 1.05 1.05 1; material.color: pink"
@@ -32,7 +33,7 @@
 					  position = "0 0 0.005" >
 					  </a-entity>
 					
-					</a-entity> -->
+					</a-entity>  -->
 
 		 <!-- POSITION LINK TEMPLATE -->
 		<script id="link" type="text/html">
@@ -119,9 +120,9 @@
 
 		  <a-entity id="SceneOptions" layout="type: line; margin: 3" position="-1 1.0 -2">
         
-			<a-entity template="src: #scene" text="Saturday House For Newlyweds"></a-entity>
-			<a-entity template="src: #scene" text="Italian Pavilion at the Paris Expo of 1937"></a-entity>
-			<a-entity template="src: #scene" text="Exhibition Of Mass Production"></a-entity>-->
+			<a-entity template="src: #scene" text="value:Saturday House For Newlyweds;"></a-entity>
+			<a-entity template="src: #scene" text="value:Italian Pavilion at the Paris Expo of 1937;"></a-entity>
+			<a-entity template="src: #scene" text="value:Exhibition Of Mass Production;"></a-entity>-->
 
 
 		  <!-- Scene Position links. 
