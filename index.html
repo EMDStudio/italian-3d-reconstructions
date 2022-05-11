@@ -11,28 +11,51 @@
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
  
-			    <!-- Image link template to be reused. -->
-				<script id="link" type="text/html">
-				  <a-entity class="link"
-				  geometry="primitive:plane; height: 1.0; width: 1.0"
-					position="0 -0 -0.1"
-					material= "shader: flat; color: #adb8af"
+
+	 <!-- SCENE TEMPLATE --> <!---
+	 <script id="scene" type="text/html">
+		 <a-entity class="scene"
+		     geometry="primitive:plane; height: 1.0; width: 1.0"
+			 position="0 -0 -0.1"
+			 material= "shader: flat; color: #adb8af"
+			
+		  
+			  event-set__mouseenter="scale: 1.05 1.05 1; material.color: pink"
+			  event-set__mouseleave="scale: 1 1 1; material.color: #adb8af"
+			  event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+			  proxy-event="event: click; to: #image-360; as: fade">	
+
+			         <a-entity class="scene"
+					  geometry="primitive: plane; height: 0.95; width: 0.95"
+					  material="shader: flat; src: ${thumb}"
+		
+					  position = "0 0 0.005" >
+					  </a-entity>
 					
-					event-set__mouseenter="scale: 1.05 1.05 1; material.color: pink"
-					event-set__mouseleave="scale: 1 1 1; material.color: #adb8af"
-					event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
-					proxy-event="event: click; to: #image-360; as: fade">					
+					</a-entity> -->
+
+		 <!-- POSITION LINK TEMPLATE -->
+		<script id="link" type="text/html">
+			<a-entity class="link"
+			geometry="primitive:plane; height: 1.0; width: 1.0"
+			position="0 -0 -0.1"
+			material= "shader: flat; color: #adb8af"
 					
-					
+			event-set__mouseenter="scale: 1.05 1.05 1; material.color: pink"
+			event-set__mouseleave="scale: 1 1 1; material.color: #adb8af"
+			event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+			proxy-event="event: click; to: #image-360; as: fade">	
+
 					<a-entity class="link"
-					
 					geometry="primitive: plane; height: 0.95; width: 0.95"    
 					material="shader: flat; src: ${thumb}"
-					position = "0 0 0.005"
-					 ></a-entity></a-entity>
+					position = "0 0 0.005">
+				    </a-entity>
+
+			</a-entity>
 
 
-				</script>
+</script>
 
 </head>
   <body>
@@ -47,7 +70,7 @@
 				
 				<!-- thumbnail Images. -->
 
-		
+		     <!--SaturdayHouse-->
 				<img id="SHFN_Main_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_thumb.jpg">
 				<img id="SHFN_Bedroom_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_thumb.jpg">
 				<img id="SHFN_Roof_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_thumb.jpg">
@@ -56,27 +79,31 @@
 				<img id="EOMP_hall1_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall1_thumb.jpg">
 				<img id="EOMP_hall2_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall2_thumb.jpg">
 				<img id="EOMP_hall3_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall3_thumb.jpg">
-																			
 
-
-
-					<!-- 360 Images. -->
+			<!--StartingImage-->															
 				<img id="starter-image" crossorigin="anonymous" src="Images/StartingBG.jpg">
+
+			<!--BacktoMenu-->
+				<img id="backtomenu" crossorigin="anonymous" src="Images/BacktoMenu_thumb.png">
+
+
+				<!--360 Images -->
+            <!--SaturdayHouse-->
 				<img id="SHFNMain_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_360.jpg">
 				<img id="SHFNBedroom_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
 				<img id="SHFNRoof_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_360.jpg">
+
+            <!--Pavillion-->
 				<img id="PavillionMain_360" crossorigin="anonymous" src="Images/PavillionMain_360.png">
+
+			<!--MassProduction-->
 				<img id="EOMPMain_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Main_360.jpg">
 				<img id="EOMPHall1_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall1_360.jpg">
 				<img id="EOMPHall2_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall2_360.jpg">
 				<img id="EOMPHall3_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall3_360.jpg">
-
-
-
-			
-
-			
 		  </a-assets>
+
+
 
 		<!-- 360-degree image. -->
 			<a-sky id="image-360" radius="10" color="white"
@@ -85,16 +112,38 @@
 			</a-sky>
 		
 
-		  <!-- Image links. -->
-		  <a-entity id="links" layout="type: line; margin: 1.1" position="-1 1.0 -2">
+		  <!-- Scene Choice links.
+		 I want these to appear within the starting white scene, and I can play with pretty fonts and hover changes, add more info etc-->
+		<!--TEXT= attempts do not work currently 
+		I created the scene template for these text based options
+
+		  <a-entity id="SceneOptions" layout="type: line; margin: 3" position="-1 1.0 -2">
+        
+			<a-entity template="src: #scene" text="Saturday House For Newlyweds"></a-entity>
+			<a-entity template="src: #scene" text="Italian Pavilion at the Paris Expo of 1937"></a-entity>
+			<a-entity template="src: #scene" text="Exhibition Of Mass Production"></a-entity>-->
+
+
+		  <!-- Scene Position links. 
+		I want these to show once a scene choice has been made
+	    (only showing the relevant thumbnails)-->
+		  <a-entity id="PositionLinks" layout="type: line; margin: 1.1" position="-2 1.0 -2">
+            <!--SaturdayHouse-->
 			<a-entity template="src: #link" data-src="#SHFNMain_360" data-thumb="#SHFN_Main_thumb"> </a-entity>
 			<a-entity template="src: #link" data-src="#SHFNBedroom_360"  data-thumb="#SHFN_Bedroom_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#SHFNRoof_360"  data-thumb="#SHFN_Roof_thumb"></a-entity>
+
+            <!--Pavillion-->
 			<a-entity template="src: #link" data-src="#PavillionMain_360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+
+			<!--MassProduction
 			<a-entity template="src: #link" data-src="#EOMPMain_360"  data-thumb="#EOMP_Main_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#EOMPHall1_360" data-thumb="#EOMP_hall1_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#EOMPHall2_360" data-thumb="#EOMP_hall2_thumb"></a-entity>
-			<a-entity template="src: #link" data-src="#EOMPHall3_360" data-thumb="#EOMP_hall3_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#EOMPHall3_360" data-thumb="#EOMP_hall3_thumb"></a-entity>-->
+
+			<!--BacktoMenu-->
+			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
 		</a-entity>
 
 	
