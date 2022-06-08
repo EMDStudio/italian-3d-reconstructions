@@ -112,6 +112,7 @@
 				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
 			</a-sky>
 		
+	
 
 		  <!-- Scene Choice links.
 		 I want these to appear within the starting white scene, and I can play with pretty fonts and hover changes, add more info etc-->
@@ -119,32 +120,59 @@
 		I created the scene template for these text based options
 
 		  <a-entity id="SceneOptions" layout="type: line; margin: 3" position="-1 1.0 -2">
-        
-			<a-entity template="src: #scene" text="value:Saturday House For Newlyweds;"></a-entity>
+			<a-entity template="src: #scene" text="value:Saturday House For Newlyweds;">
 			<a-entity template="src: #scene" text="value:Italian Pavilion at the Paris Expo of 1937;"></a-entity>
 			<a-entity template="src: #scene" text="value:Exhibition Of Mass Production;"></a-entity>-->
+
+        <!-- Triennale Summary (includes Saturday House & Mass Exhibition)
+				'Triennale Virtuale' - reconstructions of exhibits from the Milan Triennale of the 1930s 
+				in collaboration with Domenico Chizzoniti, Milan Polytechnic -->
+
+			<!-- Saturday House Details
+				BBPR & Piero Portaluppi, Saturday House for Newly Weds (Casa del sabato per gli sposi), Milan Triennale, 1933. 
+				VR model by Casey Dalbo & Casey Richardson, Web Porting - Stephen Jeal
+			 -->
+
+			 <!-- Mass Production Details
+				  Giuseppe Pagano, Exhibition of Mass Production (Mostra della Produzione in Serie), Milan Triennale, 1939/40. 
+				VR model by Casey Dalbo & Casey Richardson, Web Porting - Stephen Jeal -->
+
+		<!-- Italian Pavillion details
+		Italian Pavilion at the Paris Expo of 1937 by Marcello Piacentini and Giuseppe Pagano. 
+		Virtual reconstruction by Stephen Jeal, Casey Richardson and Casey Dalbo.-->
+
+
 
 
 		  <!-- Scene Position links. 
 		I want these to show once a scene choice has been made
 	    (only showing the relevant thumbnails)-->
-		  <a-entity id="PositionLinks" layout="type: line; margin: 1.1" position="-2 1.0 -2">
+		<a-entity id="Scene_Thumbs" layout="type: line; margin: 1.1" position="-2 1.0 -2"></a-entity>
+			<a-entity template="src: #link" data-src="#PavillionMain_360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNMain_360" data-thumb="#SHFN_Main_thumb"> </a-entity>
+			<a-entity template="src: #link" data-src="#EOMPMain_360"  data-thumb="#EOMP_Main_thumb"></a-entity>
+
+
+		<a-entity id="SaturdayHouse_Scene" layout="type: line; margin: 1.1" position="-2 1.0 -2">
             <!--SaturdayHouse-->
 			<a-entity template="src: #link" data-src="#SHFNMain_360" data-thumb="#SHFN_Main_thumb"> </a-entity>
 			<a-entity template="src: #link" data-src="#SHFNBedroom_360"  data-thumb="#SHFN_Bedroom_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#SHFNRoof_360"  data-thumb="#SHFN_Roof_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
 
             <!--Pavillion-->
+		<a-entity id="Pavillion_Scene" layout="type: line; margin: 1.1" position="-2 1.0 -2"></a-entity>
 			<a-entity template="src: #link" data-src="#PavillionMain_360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
 
-			<!--MassProduction
+			<!--MassProduction (no thumbs yet)--> 
+		<a-entity id="MassProduction_Scene" layout="type: line; margin: 1.1" position="-2 1.0 -2"></a-entity>
 			<a-entity template="src: #link" data-src="#EOMPMain_360"  data-thumb="#EOMP_Main_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#EOMPHall1_360" data-thumb="#EOMP_hall1_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#EOMPHall2_360" data-thumb="#EOMP_hall2_thumb"></a-entity>
-			<a-entity template="src: #link" data-src="#EOMPHall3_360" data-thumb="#EOMP_hall3_thumb"></a-entity>-->
-
-			<!--BacktoMenu-->
+			<a-entity template="src: #link" data-src="#EOMPHall3_360" data-thumb="#EOMP_hall3_thumb"></a-entity>
 			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
+
 		</a-entity>
 
 	
