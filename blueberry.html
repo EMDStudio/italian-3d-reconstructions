@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	
+    <meta charset="utf-8">
+    <title>Triennale Virtuale</title>
+    <meta name="description" content="360&deg; Image - A-Frame">
+	<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+ 
+
+	 <!-- SCENE TEMPLATE --> <!----
+	 <script id="scene" type="text/html">
+		 <a-entity class="scene"
+		     geometry="primitive:plane; height: 1.0; width: 1.0"
+			 position="0 -0 -0.1"
+			 material= "shader: flat; color: #adb8af"
+			text="value:Saturday House For Newlyweds;"
+			
+		  
+			  event-set__mouseenter="scale: 1.05 1.05 1; material.color: pink"
+			  event-set__mouseleave="scale: 1 1 1; material.color: #adb8af"
+			  event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+			  proxy-event="event: click; to: #image-360; as: fade">	
+
+			         <a-entity class="scene"
+					  geometry="primitive: plane; height: 0.95; width: 0.95"
+					  material="shader: flat; src: ${thumb}"
+		
+					  position = "0 0 0.005" >
+					  </a-entity>
+					
+					</a-entity>  -->
+
+		 <!-- POSITION LINK TEMPLATE -->
+		<script id="link" type="text/html">
+			<a-entity class="link"
+			geometry="primitive:plane; height: 1.0; width: 1.0"
+			position="0 -0 -0.1"
+			material= "shader: flat; color: #adb8af"
+					
+			event-set__mouseenter="scale: 1.05 1.05 1; material.color: pink"
+			event-set__mouseleave="scale: 1 1 1; material.color: #adb8af"
+			event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+			proxy-event="event: click; to: #image-360; as: fade">	
+
+					<a-entity class="link"
+					geometry="primitive: plane; height: 0.95; width: 0.95"    
+					material="shader: flat; src: ${thumb}"
+					position = "0 0 0.005">
+				    </a-entity>
+
+			</a-entity>
+
+
+</script>
+
+</head>
+  <body>
+    <a-scene>
+		<!-- <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5 "rotation="0 15 0"></a-text> -->
+	  
+		<!-- Gallery -->
+			<a-assets>
+				
+				
+				
+				
+				<!-- thumbnail Images. -->
+
+		     <!--SaturdayHouse-->
+				<img id="SHFN_Main_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_thumb.jpg">
+				<img id="SHFN_Bedroom_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_thumb.jpg">
+				<img id="SHFN_Roof_thumb" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_thumb.jpg">
+				<img id="Pavillion_Main_thumb" crossorigin="anonymous" src="Images/Pavillion_Main_thumb.png">
+				<img id="EOMP_Main_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Main_thumb.jpg">
+				<img id="EOMP_hall1_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall1_thumb.jpg">
+				<img id="EOMP_hall2_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall2_thumb.jpg">
+				<img id="EOMP_hall3_thumb" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall3_thumb.jpg">
+
+			<!--StartingImage-->															
+				<img id="starter-image" crossorigin="anonymous" src="Images/StartingBG.jpg">
+
+			<!--BacktoMenu-->
+				<img id="backtomenu" crossorigin="anonymous" src="Images/BacktoMenu_thumb.png">
+
+
+				<!--360 Images -->
+            <!--SaturdayHouse-->
+				<img id="SHFNMain_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Main_360.jpg">
+				<img id="SHFNBedroom_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Bedroom_360.jpg">
+				<img id="SHFNRoof_360" crossorigin="anonymous" src="Images/SaturdayHouseForNewlyweds_Roof_360.jpg">
+
+            <!--Pavillion-->
+				<img id="PavillionMain_360" crossorigin="anonymous" src="Images/PavillionMain_360.png">
+
+			<!--MassProduction-->
+				<img id="EOMPMain_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Main_360.jpg">
+				<img id="EOMPHall1_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall1_360.jpg">
+				<img id="EOMPHall2_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall2_360.jpg">
+				<img id="EOMPHall3_360" crossorigin="anonymous" src="Images/ExhibitionOfMassProduction_Hall3_360.jpg">
+		  </a-assets>
+
+
+
+		<!-- 360-degree image. -->
+			<a-sky id="image-360" radius="10" color="white"
+				animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+				animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
+			</a-sky>
+		
+	
+
+		  <!-- Scene Choice links.
+		 I want these to appear within the starting white scene, and I can play with pretty fonts and hover changes, add more info etc-->
+		<!--TEXT= attempts do not work currently 
+		I created the scene template for these text based options
+
+		  <a-entity id="SceneOptions" layout="type: line; margin: 3" position="-1 1.0 -2">
+			<a-entity template="src: #scene" text="value:Saturday House For Newlyweds;">
+			<a-entity template="src: #scene" text="value:Italian Pavilion at the Paris Expo of 1937;"></a-entity>
+			<a-entity template="src: #scene" text="value:Exhibition Of Mass Production;"></a-entity>-->
+
+        <!-- Triennale Summary (includes Saturday House & Mass Exhibition)
+				'Triennale Virtuale' - reconstructions of exhibits from the Milan Triennale of the 1930s 
+				in collaboration with Domenico Chizzoniti, Milan Polytechnic -->
+
+			<!-- Saturday House Details
+				BBPR & Piero Portaluppi, Saturday House for Newly Weds (Casa del sabato per gli sposi), Milan Triennale, 1933. 
+				VR model by Casey Dalbo & Casey Richardson, Web Porting - Stephen Jeal
+			 -->
+
+			 <!-- Mass Production Details
+				  Giuseppe Pagano, Exhibition of Mass Production (Mostra della Produzione in Serie), Milan Triennale, 1939/40. 
+				VR model by Casey Dalbo & Casey Richardson, Web Porting - Stephen Jeal -->
+
+		<!-- Italian Pavillion details
+		Italian Pavilion at the Paris Expo of 1937 by Marcello Piacentini and Giuseppe Pagano. 
+		Virtual reconstruction by Stephen Jeal, Casey Richardson and Casey Dalbo.-->
+
+
+
+
+		  <!-- Scene Position links. 
+		I want these to show once a scene choice has been made
+	    (only showing the relevant thumbnails)-->
+		<a-entity id="Scene_Thumbs" layout="type: line; margin: 1.1" position="-2 1.0 -2"></a-entity>
+			<a-entity template="src: #link" data-src="#PavillionMain_360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNMain_360" data-thumb="#SHFN_Main_thumb"> </a-entity>
+			<a-entity template="src: #link" data-src="#EOMPMain_360"  data-thumb="#EOMP_Main_thumb"></a-entity>
+
+
+		<a-entity id="SaturdayHouse_Scene" layout="type: line; margin: 1.1" position="-2 1.0 -2">
+            <!--SaturdayHouse-->
+			<a-entity template="src: #link" data-src="#SHFNMain_360" data-thumb="#SHFN_Main_thumb"> </a-entity>
+			<a-entity template="src: #link" data-src="#SHFNBedroom_360"  data-thumb="#SHFN_Bedroom_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#SHFNRoof_360"  data-thumb="#SHFN_Roof_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
+
+            <!--Pavillion-->
+		<a-entity id="Pavillion_Scene" layout="type: line; margin: 1.1" position="-2 1.0 -2"></a-entity>
+			<a-entity template="src: #link" data-src="#PavillionMain_360" data-thumb="#Pavillion_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
+
+			<!--MassProduction (no thumbs yet)--> 
+		<a-entity id="MassProduction_Scene" layout="type: line; margin: 1.1" position="-2 1.0 -2"></a-entity>
+			<a-entity template="src: #link" data-src="#EOMPMain_360"  data-thumb="#EOMP_Main_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#EOMPHall1_360" data-thumb="#EOMP_hall1_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#EOMPHall2_360" data-thumb="#EOMP_hall2_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#EOMPHall3_360" data-thumb="#EOMP_hall3_thumb"></a-entity>
+			<a-entity template="src: #link" data-src="#image-360" data-thumb="#backtomenu"></a-entity>
+
+		</a-entity>
+
+	
+
+
+
+		  <!-- Camera + Cursor. -->
+		  <a-camera>
+			<a-cursor 
+			  id="cursor"
+			  animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+			  animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+			  event-set__mouseenter="_event: mouseenter; color: pink"
+			  event-set__mouseleave="_event: mouseleave; color: black"
+			  raycaster="objects: .link">
+			</a-cursor>
+		</a-camera>
+			  
+	  
+    </a-scene>
+  </body>
+</html>
+
